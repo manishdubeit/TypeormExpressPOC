@@ -1,0 +1,263 @@
+$primary-color: #e31f2d;
+
+@mixin form-label-style() {
+  height: 19px;
+  opacity: 0.5;
+  color: #000000;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.login-container {
+  height: 100%;
+}
+
+.custom-login-box {
+  // margin-top: 150px;
+}
+
+.custom-reset-box {
+  /* 	margin-top: 160px; */
+}
+
+.custom-row-height {
+  height: 100%;
+  align-items: center;
+}
+
+.custom-login-account {
+  font-size: 16px;
+  line-height: 19px;
+  /*  font-weight: 500; */
+  margin-bottom: 17px;
+  padding-left: 16px;
+}
+
+.custom-login-input {
+  border-radius: 0;
+}
+
+.custom-login-btn {
+  justify-content: center;
+  height: 40px;
+  margin-top: 40px;
+}
+
+.custom-forgot-password {
+  padding: 5px;
+  padding-left: 15px;
+  cursor: pointer;
+  @include form-label-style();
+}
+
+.custom-password-margin {
+  margin-bottom: 0 !important;
+}
+
+.custom-password-email {
+  margin-bottom: 20px !important;
+}
+
+.custom-reset-email {
+  margin: 0px !important;
+}
+
+.btn {
+  width: 170px !important;
+  border-radius: 0 !important;
+}
+
+.custom-password-eyes {
+  position: absolute;
+  z-index: 9999;
+  right: 3%;
+  top: 57.5%;
+}
+
+.custom-email-id,
+.custom-password-id {
+  @include form-label-style();
+}
+
+.custom-reset-form {
+  padding-left: 3px !important;
+}
+
+.reset-link-text {
+  font-size: 16px;
+  line-height: 19px;
+  align-items: center;
+  padding-left: 0 !important;
+}
+
+.reset-shift-right {
+  margin-left: 33px !important;
+}
+
+.reset-link-color {
+  color: $primary-color !important;
+  font-size: 17px;
+  line-height: 20px;
+}
+
+.reset-center-right {
+  margin-left: 60px !important;
+}
+
+.reset-note-color {
+  color: #a1a1a1;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.reset-bottom-space {
+  margin-bottom: 12px;
+}
+
+.reset-note-space {
+  margin-bottom: 117px;
+}
+
+.return-login-btn {
+  color: $primary-color;
+  font-size: 17px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.custom-reset-password-login-back {
+  margin-top: 80px;
+}
+
+.validation-msg {
+  color: red;
+  margin: 0px !important;
+  margin-top: 5px !important;
+}
+
+.custom-setpassword-margin {
+  margin-bottom: 40px !important;
+}
+
+.custom-login-bg-image {
+  /*  background-image: url('../../../../assets/images/login-image.png'); */
+}
+
+.custom-position-alert {
+  position: relative;
+}
+
+.custom-user-not-present,
+.forgot-login {
+  // margin: 0px !important;
+  // margin-bottom: 15px !important;
+  position: absolute;
+  top: -60px;
+  margin: 0 !important;
+  width: 100%;
+}
+
+.adjust-eye {
+  top: 41.5% !important;
+}
+
+.custom-new-password-msg {
+  justify-content: center;
+  color: $primary-color;
+  margin-top: 36px;
+}
+
+.disabled-form {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.custom-reset-checked-icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 26px;
+  width: 26px;
+  padding-right: 48px;
+  /*   background-image: url('../../../../assets/icons/reset-password-checked.png'); */
+}
+
+.custom-reset-back-icon {
+  margin-right: 3px;
+  margin-left: -5px;
+  height: 26px;
+  width: 21px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /*  background-image: url('../../../../assets/icons/reset-password-back.png'); */
+}
+
+.custom-disabled-form {
+  pointer-events: none !important;
+  opacity: 0.5 !important;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: $primary-color !important;
+}
+
+@media screen and (max-width: 1343px) {
+  .forgot-login {
+    top: -73px;
+  }
+}
+
+@media screen and (max-width: 803px) {
+  .forgot-login {
+    top: -93px;
+  }
+}
+
+.btn-disabled {
+  cursor: not-allowed;
+}
+
+.bg-login {
+  /*  background-image: linear-gradient(45deg, #6851d6, transparent); */
+  // background-image: url("../../../../assets/images/icon/bg_login.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.login-box-bg {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 12px slategrey;
+  padding: 40px;
+}
+
+.jetking-logo {
+  // background-image: url("../../../../assets/images/jetking-black-logo.png");
+  background-size: contain;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.m-logo {
+  margin-bottom: 25px;
+}
+
+i.fa-eye,
+i.fa-eye-slash {
+  color: $primary-color !important;
+}
+
+.option-row {
+  margin: 40px;
+}
+
+.btn-crm,
+.btn-lms {
+  padding: 10px 20px !important;
+  width: 200px !important;
+  font-weight: 500 !important;
+}

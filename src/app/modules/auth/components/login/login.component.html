@@ -1,0 +1,136 @@
+<div class="login-container bg-login">
+  <div class="row custom-row-height">
+    <div class="col-md-12 custom-login-section">
+      <div class="row">
+        <div class="col-md-3 mx-auto custom-login-box login-box-bg"
+          [ngClass]="{ 'custom-disabled-form': loginFormDisabled === true && !toggleShow }"
+          *ngIf="!toggleForm && !resetLink">
+          <div class="custom-position-alert">
+            <div class="row alert alert-danger custom-user-not-present" style="position:absolute;" role="alert"
+              *ngIf="usernotPresent" [@fadeInOut]>
+              {{ usernotPresent }}
+            </div>
+            <div class="row custom-login-account m-logo">
+              <div class="col-md-12 jetking-logo" [style.background-image]="'url('+ lmsLogo +')'"></div>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" *ngIf="!toggleShow">
+              <div class="form-group custom-password-email">
+                <label for="exampleInputEmail1" class="custom-email-id">Email ID/Mobile No</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                  </div>
+                  <input type="email" class="form-control custom-login-input" formControlName="username" />
+                </div>
+                <p *ngIf="
+                    ((loginForm.get('username').touched  &&
+                    loginForm.get('username').hasError('required')) ||  (loginForm.get('username').invalid && loginSubmitted))
+                  " class="validation-msg">
+                  Email is required.
+                </p>
+                <p *ngIf="
+                    loginForm.get('username').touched &&
+                    loginForm.get('username').hasError('email')
+                  " class="validation-msg">
+                  Valid Email is required.
+                </p>
+              </div>
+              <div class="form-group custom-password-margin" style="position: relative">
+                <label for="exampleInputPassword1" class="custom-password-id">Password</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
+                  </div>
+                  <input type="password" #password class="form-control custom-login-input" formControlName="password" />
+                </div>
+                <i class="fa fa-eye custom-password-eyes" [ngClass]="{
+                    'fa-eye': showPassword === true,
+                    'fa-eye-slash': showPassword === false,
+                    'adjust-eye':
+                      loginForm.get('password').touched &&
+                      loginForm.get('password').hasError('required')
+                  }" (click)="onEye()"></i>
+                <p *ngIf="
+                    ((loginForm.get('password').touched &&
+                    loginForm.get('password').hasError('required')) || (loginForm.get('password').invalid && loginSubmitted))
+                  " class="validation-msg">
+                  Password is required.
+                </p>
+              </div>
+              <span class="row custom-forgot-password" (click)="onResetPassword()">
+                Forgot Password?
+              </span>
+              <div class="row custom-login-btn">
+                <button type="submit" class="btn btn-primary">
+                  Login
+                </button>
+              </div>
+            </form>
+            <ng-container *ngIf="toggleShow">
+              <div class="row justify-content-center option-row">
+                <div class="option-btn-col-1">
+                  <button class="btn btn-primary btn-crm" (click)="takeToDestination('crm')">CRM</button>
+                </div>
+              </div>
+              <div class="row justify-content-center option-row">
+                <div class="option-btn-col-2">
+                  <button class="btn btn-primary btn-lms" (click)="takeToDestination()">LMS</button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="col-md-3 mx-auto custom-reset-box login-box-bg"
+          [ngClass]="{ 'custom-disabled-form': resetFormDisabled === true }" *ngIf="toggleForm && !resetLink">
+          <div class="custom-position-alert">
+            <div class="row alert alert-danger forgot-login custom-user-not-present" role="alert" *ngIf="resetNotFound"
+              [@fadeInOut]>
+              {{ resetNotFound }}
+            </div>
+            <div class="row custom-login-account">
+              RESET PASSWORD
+            </div>
+            <form [formGroup]="resetForm" (ngSubmit)="onResetSubmit()" class="custom-reset-form">
+              <div class="form-group custom-reset-email">
+                <label for="exampleInputEmail1" class="custom-email-id">Email ID/Mobile No</label>
+                <input type="email" class="form-control custom-login-input" formControlName="username" />
+                <p *ngIf="
+                    resetForm.get('username').touched &&
+                    resetForm.get('username').hasError('required')
+                  " class="validation-msg">
+                  Email/Mobile No is required.
+                </p>
+                <p *ngIf="
+                    resetForm.get('username').touched &&
+                    resetForm.get('username').hasError('email')
+                  " class="validation-msg">
+                  Valid Email is required.
+                </p>
+              </div>
+              <div class="row custom-login-btn">
+                <button type="submit" class="btn btn-primary" [class.btn-disabled]="!loginForm.valid"
+                  [disabled]="resetForm.invalid">
+                  Reset Password
+                </button>
+              </div>
+              <div class="row return-login-btn custom-reset-password-login-back" (click)="onLogin()">
+                <div class="custom-reset-back-icon"></div>
+                Login
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mx-auto custom-reset-box" *ngIf="resetLink">
+        <div class="row custom-login-account reset-link-text">
+          <div class="custom-reset-checked-icon"></div>
+          RESET LINK SENT
+        </div>
+        <div class="row return-login-btn" (click)="onLogin()">
+          <div class="custom-reset-back-icon"></div>
+          Login
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

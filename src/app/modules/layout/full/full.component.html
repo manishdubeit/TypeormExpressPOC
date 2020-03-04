@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="menu1">
+        <div class="text"> By Full path</div>
+
+        <div class="item1" [routerLink]="['/home']" routerLinkActive="router-link-active">
+            Home
+        </div>
+        <div class="item1" [routerLink]="['/about']" routerLinkActive="router-link-active">
+            About
+        </div>
+        <div class="item1" [routerLink]="['/contact']" routerLinkActive="router-link-active">
+            Contact
+        </div>
+        <div class="item1" [routerLink]="['/todos']" routerLinkActive="router-link-active">
+            TODO
+        </div>
+    </div>
+
+    <div class="menu2">
+        <div class="text"> By relative path </div>
+
+        <div class="item2" (click)="goTo('/home')">
+            Home
+        </div>
+        <div class="item2" (click)="goTo('/about')">
+            About
+        </div>
+        <div class="item2" (click)="goTo('/contact')">
+            Contact
+        </div>
+        <div class="item2" (click)="goTo('/todos')">
+            TODO
+        </div>
+    </div>
+</div>
+
+<div class="component-wrapper">
+    <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>
