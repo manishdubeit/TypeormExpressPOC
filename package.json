@@ -30,7 +30,7 @@
     "socket.io": "^2.3.0",
     "sqlite3": "^4.0.3",
     "ts-node-dev": "^1.0.0-pre.32",
-    "typeorm": "0.2.12",
+    "typeorm": "0.2.25",
     "winston": "^3.2.1"
   },
   "scripts": {
