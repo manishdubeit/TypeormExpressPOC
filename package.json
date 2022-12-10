@@ -18,7 +18,7 @@
     "class-sanitizer": "0.0.5",
     "class-validator": "^0.9.1",
     "cors": "^2.8.5",
-    "express": "^4.15.4",
+    "express": "^4.17.3",
     "express-validator": "^6.3.0",
     "gulp": "^4.0.2",
     "gulp-typescript": "^4.0.2",
