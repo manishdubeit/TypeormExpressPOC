@@ -16,7 +16,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.1",
     "class-sanitizer": "0.0.5",
-    "class-validator": "^0.9.1",
+    "class-validator": "^0.14.0",
     "cors": "^2.8.5",
     "express": "^4.15.4",
     "express-validator": "^6.3.0",
